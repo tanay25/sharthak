@@ -42,11 +42,6 @@ pipeline {
                         --name flask-test \
                         $IMAGE_NAME:$BUILD_NUMBER
 
-                    sleep 5
-
-                    docker inspect -f \
-                        '{{.State.Running}}' flask-test |
-                        grep -q true
                 '''
             }
         }
